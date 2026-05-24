@@ -1,0 +1,686 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #0b1a3a, #020814 70%);
+    color: white;
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header h1 {
+    font-size: 18px;
+    letter-spacing: 2px;
+}
+
+nav a {
+    margin-left: 30px;
+    text-decoration: none;
+    color: #8aa4ff;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #4aa3ff;
+}
+
+button {
+    padding: 10px 22px;
+    border: 1px solid #4aa3ff;
+    border-radius: 25px;
+    background: transparent;
+    color: #4aa3ff;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-right: 10px;
+}
+
+button a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #4aa3ff, #6bbcff);
+    color: white;
+    box-shadow: 0 0 15px #4aa3ff;
+}
+
+section:nth-of-type(1) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 60px;
+    min-height: 90vh;
+}
+
+section:nth-of-type(1) h2 {
+    font-size: 70px;
+    line-height: 1.1;
+}
+
+section:nth-of-type(1) p {
+    margin: 20px 0;
+    max-width: 500px;
+    color: #b8b8b8;
+    line-height: 1.5;
+}
+
+section:nth-of-type(2) {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    padding: 40px;
+    background: #020814;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+section:nth-of-type(2) h3 {
+    font-size: 32px;
+    color: #4aa3ff;
+}
+
+section:nth-of-type(2) p {
+    font-size: 14px;
+    color: #aaa;
+}
+
+section:nth-of-type(3) {
+    padding: 80px 60px;
+    text-align: center;
+}
+
+section:nth-of-type(3) h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+}
+
+section:nth-of-type(3) > p {
+    color: #aaa;
+    margin-bottom: 40px;
+}
+
+section:nth-of-type(3) > div {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.card {
+    display: block;
+    width: 380px;
+    text-decoration: none;
+    color: inherit;
+    background: linear-gradient(180deg, #0a1328, #050b1a);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(74, 163, 255, 0.4);
+}
+
+.card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+}
+
+.card h4 {
+    padding: 15px 20px 5px;
+    font-size: 25px;
+}
+
+.card h4::before {
+    color: #4aa3ff;
+}
+
+.card p {
+    padding: 0 20px 20px;
+    font-size: 18px;
+    color: #aaa;
+}
+
+/*sistema solar*/
+.sistema-solar {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sol {
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff7a8 0%, #ffd000 35%, #ff9900 100%);
+    box-shadow:
+        0 0 25px #ffd000,
+        0 0 50px #ffb300,
+        0 0 100px rgba(255, 170, 0, 0.5);
+    z-index: 10;
+}
+
+.orbita {
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    border-radius: 50%;
+    animation: girar linear infinite;
+}
+
+.planeta {
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+/*css planetas*/
+.mercurio-orbita { 
+	width: 100px; 
+	height: 100px; 
+	animation-duration: 2.4s; 
+}
+
+.mercurio {
+    width: 6px;
+    height: 6px;
+    background: #b8b8b8;
+    box-shadow: 0 0 8px #b8b8b8;
+}
+
+.venus-orbita { 
+	width: 150px; 
+	height: 150px; 
+	animation-duration: 6.2s; 
+}
+.venus {
+    width: 10px;
+    height: 10px;
+    background: #e7c27d;
+    box-shadow: 0 0 10px #e7c27d;
+}
+
+.terra-orbita { 
+	width: 210px; 
+	height: 210px; 
+	animation-duration: 10s; 
+}
+.terra {
+    width: 11px;
+    height: 11px;
+    background: #4aa3ff;
+    box-shadow: 0 0 12px #4aa3ff;
+}
+
+.marte-orbita { 
+	width: 270px; 
+	height: 270px; 
+	animation-duration: 18.8s; 
+}
+.marte {
+    width: 9px;
+    height: 9px;
+    background: #ff7a59;
+    box-shadow: 0 0 10px #ff7a59;
+}
+
+.jupiter-orbita { 
+	width: 340px; 
+	height: 340px; 
+	animation-duration: 50.6s; 
+}
+
+.jupiter {
+    width: 20px;
+    height: 20px;
+    background: #d9b38c;
+    box-shadow: 0 0 12px #d9b38c;
+}
+
+.saturno-orbita { 
+	width: 410px; 
+	height: 410px; 
+	animation-duration: 75.6s; 
+}
+.saturno {
+    width: 18px;
+    height: 18px;
+    background: #f4e2b5;
+    box-shadow: 0 0 12px #f4e2b5;
+}
+
+.saturno::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 8px;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) rotate(20deg);
+}
+
+.urano-orbita { 
+	width: 470px; 
+	height: 470px; 
+	animation-duration: 350.9s; 
+}
+.urano {
+    width: 14px;
+    height: 14px;
+    background: #7fffd4;
+    box-shadow: 0 0 10px #7fffd4;
+}
+
+.netuno-orbita { 
+	width: 530px; 
+	height: 530px; 
+	animation-duration: 750s; 
+}
+.netuno {
+    width: 14px;
+    height: 14px;
+    background: #4169e1;
+    box-shadow: 0 0 10px #4169e1;
+}
+
+@keyframes girar {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/*fundo de estrelas*/
+body {
+    position: relative;
+    min-height: 100vh;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(30, 80, 255, 0.15), transparent 35%),
+        radial-gradient(circle at 80% 20%, rgba(120, 60, 255, 0.12), transparent 30%),
+        radial-gradient(circle at 50% 70%, rgba(0, 100, 255, 0.08), transparent 40%),
+        radial-gradient(circle at top, #0b1a3a, #020814 70%);
+    color: white;
+    overflow-x: hidden;
+}
+
+/* Conteúdo acima do fundo */
+header,
+section,
+footer {
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== Camada 1: MUITAS estrelas pequenas ===== */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(1px 1px at 25px 40px, white, transparent),
+        radial-gradient(1px 1px at 70px 120px, white, transparent),
+        radial-gradient(1px 1px at 110px 220px, white, transparent),
+        radial-gradient(1px 1px at 160px 80px, white, transparent),
+        radial-gradient(1px 1px at 220px 180px, white, transparent),
+        radial-gradient(1px 1px at 290px 50px, white, transparent),
+        radial-gradient(1px 1px at 340px 260px, white, transparent),
+        radial-gradient(1px 1px at 410px 140px, white, transparent),
+        radial-gradient(1px 1px at 470px 90px, white, transparent),
+        radial-gradient(1px 1px at 540px 300px, white, transparent),
+        radial-gradient(1px 1px at 620px 110px, white, transparent),
+        radial-gradient(1px 1px at 700px 230px, white, transparent),
+        radial-gradient(1px 1px at 790px 60px, white, transparent),
+        radial-gradient(1px 1px at 860px 180px, white, transparent),
+        radial-gradient(1px 1px at 930px 40px, white, transparent),
+        radial-gradient(1px 1px at 1020px 260px, white, transparent),
+        radial-gradient(1px 1px at 1110px 150px, white, transparent),
+        radial-gradient(1px 1px at 1190px 80px, white, transparent);
+
+    background-size: 1200px 400px;
+    background-repeat: repeat;
+
+    animation:
+        estrelasLentas 40s linear infinite,
+        piscar 4s ease-in-out infinite;
+    opacity: 0.9;
+}
+
+/* ===== Camada 2: estrelas médias ===== */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(2px 2px at 60px 100px, white, transparent),
+        radial-gradient(2px 2px at 250px 240px, white, transparent),
+        radial-gradient(2px 2px at 480px 70px, white, transparent),
+        radial-gradient(2px 2px at 730px 190px, white, transparent),
+        radial-gradient(2px 2px at 960px 120px, white, transparent),
+        radial-gradient(2px 2px at 1180px 280px, white, transparent),
+        radial-gradient(3px 3px at 350px 50px, rgba(255,255,255,0.95), transparent),
+        radial-gradient(3px 3px at 840px 260px, rgba(255,255,255,0.95), transparent);
+
+    background-size: 1400px 500px;
+    background-repeat: repeat;
+
+    animation:
+        estrelasRapidas 20s linear infinite,
+        piscar 2.5s ease-in-out infinite;
+    opacity: 0.85;
+}
+
+/* ===== Movimento mais rápido ===== */
+@keyframes estrelasLentas {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(400px);
+    }
+}
+
+@keyframes estrelasRapidas {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(500px);
+    }
+}
+
+/* ===== Piscar ===== */
+@keyframes piscar {
+    0%, 100% {
+        opacity: 0.55;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+/*RODAPÉ */
+
+footer {
+    position: relative;
+    margin-top: 100px;
+    padding: 90px 60px 30px;
+    background:
+        radial-gradient(circle at 20% 30%, rgba(74, 163, 255, 0.05), transparent 35%),
+        radial-gradient(circle at 80% 20%, rgba(120, 80, 255, 0.06), transparent 35%),
+        linear-gradient(to top, #010611, #020814 70%);
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    overflow: hidden;
+    z-index: 2;
+}
+
+/* ==========================================
+   LINHA BRILHANTE SUPERIOR
+   ========================================== */
+footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 2px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(74, 163, 255, 0.9),
+        transparent
+    );
+    box-shadow:
+        0 0 12px rgba(74, 163, 255, 0.7),
+        0 0 25px rgba(74, 163, 255, 0.25);
+}
+
+/* ==========================================
+   FAIXA DECORATIVA ANIMADA
+   ========================================== */
+footer::after {
+    content:
+        "UNIVERSO • BIG BANG • GALÁXIAS • NEBULOSAS • BURACOS NEGROS • EXOPLANETAS • COSMOS • "
+        "UNIVERSO • BIG BANG • GALÁXIAS • NEBULOSAS • BURACOS NEGROS • EXOPLANETAS • COSMOS • "
+        "UNIVERSO • BIG BANG • GALÁXIAS • NEBULOSAS • BURACOS NEGROS • EXOPLANETAS • COSMOS • ";
+    position: absolute;
+    top: 30px;
+    left: 0;
+    white-space: nowrap;
+    font-size: 15px;
+    letter-spacing: 4px;
+    color: rgba(120, 140, 190, 0.18);
+    animation: faixaCosmos 35s linear infinite;
+    pointer-events: none;
+}
+
+/* Animação da faixa */
+@keyframes faixaCosmos {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-33.333%);
+    }
+}
+
+/* ==========================================
+   CONTAINER PRINCIPAL
+   ========================================== */
+.footer-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1300px;
+    margin: 50px auto 40px;
+
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+}
+
+/* ==========================================
+   COLUNA 1 — MARCA
+   ========================================== */
+.footer-brand h3 {
+    font-size: 30px; /* tamanho padrão e equilibrado */
+    font-weight: 700;
+    letter-spacing: 4px;
+    color: #ffffff;
+    margin-bottom: 24px;
+    text-shadow: 0 0 12px rgba(74, 163, 255, 0.25);
+}
+
+.footer-brand p {
+    max-width: 480px;
+    font-size: 14px;
+    line-height: 2;
+    color: #7f8fb8;
+}
+
+/* ==========================================
+   TÍTULOS DAS COLUNAS
+   ========================================== */
+.footer-links h4,
+.footer-info h4 {
+    font-size: 14px;
+    color: #4aa3ff;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+/* ==========================================
+   NAVEGAÇÃO — ENFILEIRADA
+   ========================================== */
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.footer-links a {
+    display: block;
+    text-decoration: none;
+    color: #8b9bc8;
+    font-size: 16px;
+    line-height: 1.8;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: #4aa3ff;
+    transform: translateX(6px);
+    text-shadow: 0 0 8px rgba(74, 163, 255, 0.4);
+}
+
+/* ==========================================
+   CURIOSIDADES — ENFILEIRADAS
+   ========================================== */
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.footer-info p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.8;
+    color: #8b9bc8;
+}
+
+/* ==========================================
+   LINHA DIVISÓRIA
+   ========================================== */
+.footer-divider {
+    position: relative;
+    z-index: 2;
+    max-width: 1300px;
+    margin: 0 auto 30px;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.08),
+        transparent
+    );
+}
+
+/* ==========================================
+   PARTE INFERIOR
+   ========================================== */
+.footer-bottom {
+    position: relative;
+    z-index: 2;
+    max-width: 1300px;
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #6f7da7;
+}
+
+/* ==========================================
+   EFEITO AO PASSAR O MOUSE
+   ========================================== */
+footer:hover {
+    box-shadow:
+        0 -20px 60px rgba(74, 163, 255, 0.05),
+        inset 0 1px 0 rgba(255, 255, 255, 0.02);
+}
+
+/* ==========================================
+   RESPONSIVO
+   ========================================== */
+@media (max-width: 900px) {
+    footer {
+        padding: 80px 30px 30px;
+    }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }
+
+    .footer-brand p {
+        max-width: 100%;
+    }
+
+    .footer-links,
+    .footer-info {
+        align-items: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    footer::after {
+        font-size: 10px;
+        letter-spacing: 2px;
+        top: 26px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-brand h3 {
+        font-size: 36px;
+    }
+
+    .footer-brand p,
+    .footer-links a,
+    .footer-info p {
+        font-size: 15px;
+    }
+}
