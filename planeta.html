@@ -1,15 +1,372 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Planetas</title>
+
+    <link rel="stylesheet" href="css/planeta.css">
 </head>
 <body>
-    <h1>Planetas do Sistema Solar</h1>
-    <p>conteúdo da página ...</p>
-    <button>
-        <a href="mural.html">Ver simulação dos planetas</a>
-    </button>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <!-- TEXTO -->
+        <div class="hero-text">
+
+            <h1>
+                EXPLORE O
+                <span>SISTEMA SOLAR</span>
+            </h1>
+
+            <p>
+                Descubra curiosidades, características
+                e mistérios dos planetas do
+                nosso Sistema Solar.
+            </p>
+
+            <button>
+                Começar exploração →
+            </button>
+
+        </div>
+
+        <!-- SISTEMA SOLAR -->
+        <div class="solar-system">
+
+            <!-- SOL -->
+            <div class="sun"></div>
+
+            <!-- ÓRBITAS -->
+            <div class="orbit orbit1">
+                <div class="planet-mini mercury"></div>
+            </div>
+
+            <div class="orbit orbit2">
+                <div class="planet-mini venus"></div>
+            </div>
+
+            <div class="orbit orbit3">
+                <div class="planet-mini earth"></div>
+            </div>
+
+            <div class="orbit orbit4">
+                <div class="planet-mini mars"></div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MENU -->
+    <section class="planets">
+
+        <div class="planet" data-planet="mercurio">
+            Mercúrio
+        </div>
+
+        <div class="planet" data-planet="venus">
+            Vênus
+        </div>
+
+        <div class="planet" data-planet="terra">
+            Terra
+        </div>
+
+        <div class="planet" data-planet="marte">
+            Marte
+        </div>
+
+        <div class="planet" data-planet="jupiter">
+            Júpiter
+        </div>
+
+        <div class="planet" data-planet="saturno">
+            Saturno
+        </div>
+
+        <div class="planet" data-planet="urano">
+            Urano
+        </div>
+
+        <div class="planet" data-planet="netuno">
+            Netuno
+        </div>
+
+    </section>
+
+    <!-- INFO -->
+    <section class="info">
+
+        <!-- GIF FUNDO -->
+        <div class="space-bg">
+
+            <img src="imagens/sistema_solar.gif" alt="">
+
+        </div>
+
+        <!-- PLANETA -->
+        <div class="planet-image" id="planetImage"></div>
+
+        <!-- TEXTO -->
+        <div class="info-text">
+
+            <h2 id="planetTitle">
+                SELECIONE UM PLANETA
+            </h2>
+
+            <p id="planetDescription">
+                Clique em um planeta acima
+                para descobrir suas características.
+            </p>
+
+            <div class="stats">
+
+                <div id="type">
+                    Tipo:
+                </div>
+
+                <div id="diameter">
+                    Diâmetro:
+                </div>
+
+                <div id="distance">
+                    Distância do Sol:
+                </div>
+
+                <div id="day">
+                    Duração do dia:
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SCRIPT -->
+    <script>
+
+        const data = {
+
+            mercurio: {
+
+                title: "MERCÚRIO",
+
+                description:
+                "O menor planeta do Sistema Solar e o mais próximo do Sol.",
+
+                type: "Tipo: Rochoso",
+
+                diameter: "Diâmetro: 4.879 km",
+
+                distance: "Distância do Sol: 57,9 milhões km",
+
+                day: "Duração do dia: 58 dias",
+
+                image:
+                "imagens/mercurio.gif"
+            },
+
+            venus: {
+
+                title: "VÊNUS",
+
+                description:
+                "O planeta mais quente do Sistema Solar.",
+
+                type: "Tipo: Rochoso",
+
+                diameter: "Diâmetro: 12.104 km",
+
+                distance: "Distância do Sol: 108,2 milhões km",
+
+                day: "Duração do dia: 243 dias",
+
+                image:
+                "imagens/venus.gif"
+            },
+
+            terra: {
+
+                title: "TERRA",
+
+                description:
+                "Nosso lar e o único planeta conhecido por abrigar vida.",
+
+                type: "Tipo: Rochoso",
+
+                diameter: "Diâmetro: 12.742 km",
+
+                distance: "Distância do Sol: 149,6 milhões km",
+
+                day: "Duração do dia: 24h",
+
+                image:
+                "imagens/terra.gif"
+            },
+
+            marte: {
+
+                title: "MARTE",
+
+                description:
+                "Conhecido como o planeta vermelho.",
+
+                type: "Tipo: Rochoso",
+
+                diameter: "Diâmetro: 6.779 km",
+
+                distance: "Distância do Sol: 227,9 milhões km",
+
+                day: "Duração do dia: 24h 37min",
+
+                image:
+                "imagens/marte.gif"
+            },
+
+            jupiter: {
+
+                title: "JÚPITER",
+
+                description:
+                "O maior planeta do Sistema Solar.",
+
+                type: "Tipo: Gasoso",
+
+                diameter: "Diâmetro: 139.820 km",
+
+                distance: "Distância do Sol: 778,5 milhões km",
+
+                day: "Duração do dia: 10h",
+
+                image:
+                "imagens/jupiter.gif"
+            },
+
+            saturno: {
+
+                title: "SATURNO",
+
+                description:
+                "Conhecido pelos seus anéis incríveis.",
+
+                type: "Tipo: Gasoso",
+
+                diameter: "Diâmetro: 116.460 km",
+
+                distance: "Distância do Sol: 1,4 bilhões km",
+
+                day: "Duração do dia: 10h 42min",
+
+                image:
+                "imagens/saturno.gif"
+            },
+
+            urano: {
+
+                title: "URANO",
+
+                description:
+                "Um gigante gelado que gira inclinado.",
+
+                type: "Tipo: Gigante gelado",
+
+                diameter: "Diâmetro: 50.724 km",
+
+                distance: "Distância do Sol: 2,9 bilhões km",
+
+                day: "Duração do dia: 17h",
+
+                image:
+                "imagens/urano.gif"
+            },
+
+            netuno: {
+
+                title: "NETUNO",
+
+                description:
+                "O planeta mais distante do Sol.",
+
+                type: "Tipo: Gigante gelado",
+
+                diameter: "Diâmetro: 49.244 km",
+
+                distance: "Distância do Sol: 4,5 bilhões km",
+
+                day: "Duração do dia: 16h",
+
+                image:
+                "imagens/netuno.gif"
+            }
+
+        };
+
+        const planets =
+        document.querySelectorAll(".planet");
+
+        const title =
+        document.getElementById("planetTitle");
+
+        const description =
+        document.getElementById("planetDescription");
+
+        const type =
+        document.getElementById("type");
+
+        const diameter =
+        document.getElementById("diameter");
+
+        const distance =
+        document.getElementById("distance");
+
+        const day =
+        document.getElementById("day");
+
+        const image =
+        document.getElementById("planetImage");
+
+        planets.forEach(planet => {
+
+            planet.addEventListener("click", () => {
+
+                planets.forEach(el => {
+                    el.classList.remove("active");
+                });
+
+                planet.classList.add("active");
+
+                const selected =
+                data[planet.dataset.planet];
+
+                title.textContent =
+                selected.title;
+
+                description.textContent =
+                selected.description;
+
+                type.textContent =
+                selected.type;
+
+                diameter.textContent =
+                selected.diameter;
+
+                distance.textContent =
+                selected.distance;
+
+                day.textContent =
+                selected.day;
+
+                image.style.backgroundImage =
+                `url('${selected.image}')`;
+
+            });
+
+        });
+
+    </script>
+
 </body>
 </html>
