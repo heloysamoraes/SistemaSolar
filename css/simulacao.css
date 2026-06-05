@@ -55,7 +55,6 @@ body{
     font-size:10px;
 }
 
-/* SISTEMA SOLAR */
 .sistema-solar{
     width:100%;
     height:100vh;
@@ -250,8 +249,7 @@ button:hover{
     background:rgba(255,255,255,0.12);
     transition:0.3s;
 }
-
-/*inputs ocultos*/
+ 
 input[type="radio"]{
     display:none;
 }
@@ -323,8 +321,7 @@ input[type="radio"]{
     background:#d6b15d;
     color:black;
 }
-
-/*abrir informações*/
+ 
 #mercurio-info:checked ~ .mercurio-painel,
 #venus-info:checked ~ .venus-painel,
 #terra-info:checked ~ .terra-painel,
