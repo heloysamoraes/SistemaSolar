@@ -161,6 +161,27 @@ h1{
     border-radius: 12px;
 }
 
+#btnTopo {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background: #4fc3f7;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.2s ease;
+}
+
+#btnTopo:hover {
+    transform: scale(1.1);
+}
+
 /* celular */
 
 @media(max-width:768px){
@@ -181,5 +202,26 @@ h1{
     h1{
         font-size:2.5rem;
     }
+
+    #btnTopo {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    background: #4fc3f7;
+    color: white;
+    font-size: 28px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: 0.3s;
+}
+
+#btnTopo:hover {
+    transform: scale(1.15);
+}
 }
 

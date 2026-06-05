@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="css/linha.css">
 </head>
 <body>
+    <button id="btnTopo" onclick="voltarAoTopo()">⬆</button>
+
 
     <h1>Linha do Tempo do Universo</h1>
 
@@ -98,6 +100,25 @@
             </div>
         </div>
     </footer>
+
+    <script>
+const btn = document.getElementById("btnTopo");
+
+window.onscroll = function() {
+    if (document.documentElement.scrollTop > 300) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+};
+
+function voltarAoTopo() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+</script>
 
 </body>
 </html>
