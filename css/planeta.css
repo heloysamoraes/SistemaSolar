@@ -48,96 +48,46 @@
     box-shadow: 0 0 30px rgba(124, 92, 255, 0.5);
 }
 
-/* SISTEMA SOLAR */
-.solar-system {
+/* HERO */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px;
+    min-height: 100vh;
+    gap: 40px;
+}
+
+/* ASTRONAUTA */
+.hero-image {
     position: relative;
-    width: 500px; 
+    width: 500px;
     height: 500px;
-    display: flex; 
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.sun {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%; 
-    background: radial-gradient(circle, #ffd36b, #ff9f1c, #ff6b00);
-    box-shadow: 0 0 80px rgba(255, 170, 0, 0.8);
+/* IMAGEM DO ASTRONAUTA - COM MOVIMENTO SUAVE */
+.astronaut {
+    width: 320px;
+    max-width: 100%;
+    filter: drop-shadow(0 0 35px rgba(124, 92, 255, 0.5));
+    animation: float 4s ease-in-out infinite;
 }
 
-.orbit {
-    position: absolute;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 50%;
-    animation: rotateOrbit linear infinite;
-}
-
-.orbit1 {
-    width: 180px;
-    height: 180px;
-    animation-duration: 8s;
-}
-
-.orbit2 {
-    width: 260px;
-    height: 260px;
-    animation-duration: 14s;
-}
-
-.orbit3 {
-    width: 340px;
-    height: 340px;
-    animation-duration: 20s;
-}
-
-.orbit4 {
-    width: 430px;
-    height: 430px;
-    animation-duration: 28s;
-}
-
-.planet-mini {
-    position: absolute; 
-    top: -10px;
-    left: 50%; 
-    transform: translateX(-50%);
-    border-radius: 50%; 
-}
-
-.mercury {
-    width: 18px;
-    height: 18px;
-    background: #aaa;
-}
-
-.venus {
-    width: 24px;
-    height: 24px;
-    background: #d4a373;
-}
-
-.earth {
-    width: 28px;
-    height: 28px;
-    background: #4fc3ff;
-}
-
-.mars {
-    width: 22px;
-    height: 22px;
-    background: #ff7043;
-}
-
-@keyframes rotateOrbit {
-    from {
-        transform: rotate(0deg);
+/* ANIMAÇÃO SUAVE - APENAS SOBE E DESCE LEVEMENTE */
+@keyframes float {
+    0% {
+        transform: translateY(0px);
     }
-
-    to {
-        transform: rotate(360deg);
+    50% {
+        transform: translateY(-15px);
     }
-} 
+    100% {
+        transform: translateY(0px);
+    }
+}
 
 /* MENU DE PLANETAS */
 .planets {
@@ -262,7 +212,7 @@
     .hero-text h1 {
         font-size: 50px;
     }
-
+    
     .solar-system {
         width: 320px;
         height: 320px;
@@ -272,4 +222,13 @@
         width: 240px;
         height: 240px;
     }
-} 
+    
+    .hero-image {
+        width: 320px;
+        height: 320px;
+    }
+
+    .astronaut {
+        width: 250px;
+    }
+}
