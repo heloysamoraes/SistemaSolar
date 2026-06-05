@@ -1,275 +1,480 @@
-.hero {
-    display: flex; 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* FUNDO */
+body{
+
+    background:
+    radial-gradient(
+    circle at center,
+    #0f1b38 0%,
+    #050816 70%);
+
+    color: white;
+
+    overflow-x: hidden;
+}
+
+/* ESTRELAS */
+body::before{
+
+    content: "";
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 200%;
+    height: 200%;
+
+    background-image:
+    radial-gradient(2px 2px at 20px 30px, white, transparent),
+    radial-gradient(1.5px 1.5px at 80px 120px, white, transparent),
+    radial-gradient(2px 2px at 200px 200px, white, transparent),
+    radial-gradient(1px 1px at 300px 100px, white, transparent);
+
+    background-size: 500px 300px;
+
+    opacity: 0.4;
+
+    animation:
+    starsMove 60s linear infinite;
+
+    z-index: -1;
+}
+
+@keyframes starsMove{
+
+    from{
+        transform: translate(0,0);
+    }
+
+    to{
+        transform: translate(-200px,-300px);
+    }
+
+}
+
+/* HERO */
+.hero{
+
+    display: flex;
+
     justify-content: space-between;
-    align-items: center; 
+
+    align-items: center;
+
     padding: 80px;
-    min-height: 100vh; 
+
+    min-height: 100vh;
+
     gap: 40px;
 }
 
-/* TEXTO DO HERO */
-.hero-text {
+/* TEXTO */
+.hero-text{
+
     max-width: 550px;
 }
 
-.hero-text h1 {
+.hero-text h1{
+
     font-size: 72px;
-    line-height: 1; 
-    background: linear-gradient(90deg, #7c5cff, white);
+
+    line-height: 1;
+
+    background:
+    linear-gradient(
+    90deg,
+    #7c5cff,
+    white);
+
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
-.hero-text span {
+.hero-text span{
     display: block;
 }
 
-.hero-text p {
+.hero-text p{
+
     margin-top: 20px;
-    color: #c5c5d4; 
-    font-size: 20px; 
+
+    color: #c5c5d4;
+
+    font-size: 20px;
+
     line-height: 1.7;
 }
 
-.hero-text button {
+/* BOTÃO */
+.hero-text button{
+
     margin-top: 30px;
-    padding: 15px 28px; 
-    border-radius: 14px; 
+
+    padding: 15px 28px;
+
+    border-radius: 14px;
+
     border: 1px solid #7c5cff;
-    background: rgba(124, 92, 255, 0.1);
+
+    background:
+    rgba(124,92,255,0.1);
+
     color: white;
-    cursor: pointer; 
+
+    cursor: pointer;
+
     transition: 0.4s;
 }
 
-.hero-text button:hover {
-    background: #7c5cff; 
+.hero-text button:hover{
+
+    background: #7c5cff;
+
     transform: translateY(-5px);
-    box-shadow: 0 0 30px rgba(124, 92, 255, 0.5);
+
+    box-shadow:
+    0 0 30px rgba(124,92,255,0.5);
 }
 
 /* SISTEMA SOLAR */
-.solar-system {
+.solar-system{
+
     position: relative;
-    width: 500px; 
+
+    width: 500px;
     height: 500px;
-    display: flex; 
+
+    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.sun {
+/* SOL */
+.sun{
+
     width: 120px;
     height: 120px;
-    border-radius: 50%; 
-    background: radial-gradient(circle, #ffd36b, #ff9f1c, #ff6b00);
-    box-shadow: 0 0 80px rgba(255, 170, 0, 0.8);
-}
 
-.orbit {
-    position: absolute;
-    border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 50%;
-    animation: rotateOrbit linear infinite;
+
+    background:
+    radial-gradient(circle,
+    #ffd36b,
+    #ff9f1c,
+    #ff6b00);
+
+    box-shadow:
+    0 0 80px rgba(255,170,0,0.8);
 }
 
-.orbit1 {
+/* ÓRBITAS */
+.orbit{
+
+    position: absolute;
+
+    border:
+    1px solid rgba(255,255,255,0.08);
+
+    border-radius: 50%;
+
+    animation:
+    rotateOrbit linear infinite;
+}
+
+.orbit1{
     width: 180px;
     height: 180px;
     animation-duration: 8s;
 }
 
-.orbit2 {
+.orbit2{
     width: 260px;
     height: 260px;
     animation-duration: 14s;
 }
 
-.orbit3 {
+.orbit3{
     width: 340px;
     height: 340px;
     animation-duration: 20s;
 }
 
-.orbit4 {
+.orbit4{
     width: 430px;
     height: 430px;
     animation-duration: 28s;
 }
 
-.planet-mini {
-    position: absolute; 
+/* PLANETAS */
+.planet-mini{
+
+    position: absolute;
+
     top: -10px;
-    left: 50%; 
+    left: 50%;
+
     transform: translateX(-50%);
-    border-radius: 50%; 
+
+    border-radius: 50%;
 }
 
-.mercury {
+.mercury{
     width: 18px;
     height: 18px;
     background: #aaa;
 }
 
-.venus {
+.venus{
     width: 24px;
     height: 24px;
     background: #d4a373;
 }
 
-.earth {
+.earth{
     width: 28px;
     height: 28px;
     background: #4fc3ff;
 }
 
-.mars {
+.mars{
     width: 22px;
     height: 22px;
     background: #ff7043;
 }
 
-@keyframes rotateOrbit {
-    from {
+/* ANIMAÇÃO */
+@keyframes rotateOrbit{
+
+    from{
         transform: rotate(0deg);
     }
 
-    to {
+    to{
         transform: rotate(360deg);
     }
-} 
 
-/* MENU DE PLANETAS */
-.planets {
-    display: flex; 
+}
+
+/* MENU */
+.planets{
+
+    display: flex;
+
     justify-content: center;
-    gap: 14px; 
-    padding: 30px; 
+
+    gap: 14px;
+
+    padding: 30px;
+
     flex-wrap: wrap;
 }
 
-.planet {
+.planet{
+
     padding: 12px 18px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
+z
+    border:
+    1px solid rgba(255,255,255,0.1);
+
     border-radius: 30px;
-    background: rgba(255, 255, 255, 0.03);
+
+    background:
+    rgba(255,255,255,0.03);
+
     color: #bdbdd0;
-    cursor: pointer; 
+
+    cursor: pointer;
+
     transition: 0.3s;
 }
 
-.planet:hover {
-    border-color: #7c5cff; 
-    color: white; 
+.planet:hover{
+
+    border-color: #7c5cff;
+
+    color: white;
+
     transform: scale(1.05);
 }
 
-.planet.active {
+.planet.active{
+
     background: #7c5cff;
-    color: white; 
-    box-shadow: 0 0 20px rgba(124, 92, 255, 0.5);
+
+    color: white;
+
+    box-shadow:
+    0 0 20px rgba(124,92,255,0.5);
 }
 
-/* INFORMAÇÕES DO PLANETA */
-.info {
+/* INFO */
+.info{
+
     position: relative;
-    display: flex; 
-    justify-content: center; 
+
+    display: flex;
+
+    justify-content: center;
+
     align-items: center;
-    gap: 80px; 
+
+    gap: 80px;
+
     padding: 100px 60px;
-    overflow: hidden; 
+
+    overflow: hidden;
 }
 
-.space-bg {
+/* GIF FUNDO */
+.space-bg{
+
     position: absolute;
-    inset: 0; 
+
+    inset: 0;
+
     z-index: 0;
 }
 
-.space-bg img {
+.space-bg img{
+
     width: 100%;
     height: 100%;
-    object-fit: cover; 
-    opacity: 0.15; 
+
+    object-fit: cover;
+
+    opacity: 0.15;
 }
 
-.info::before {
+/* OVERLAY */
+.info::before{
+
     content: "";
-    position: absolute; 
-    inset: 0; 
-    background: rgba(5, 8, 22, 0.8);
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+    rgba(5,8,22,0.8);
+
     z-index: 1;
 }
 
-.info > * {
+/* CONTEÚDO */
+.info > *{
+
     position: relative;
-    z-index: 2; 
+
+    z-index: 2;
 }
 
-.planet-image {
+/* PLANETA */
+.planet-image{
+
     width: 360px;
-    height: 360px; 
-    border-radius: 50%; 
+    height: 360px;
+
+    border-radius: 50%;
+
     background-size: cover;
     background-position: center;
-    border: 4px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 0 80px rgba(124, 92, 255, 0.35);
+
+    border:
+    4px solid rgba(255,255,255,0.08);
+
+    box-shadow:
+    0 0 80px rgba(124,92,255,0.35);
+
     transition: 0.5s;
 }
 
-.info-text {
+/* TEXTO */
+.info-text{
+
     max-width: 500px;
 }
 
-.info-text h2 {
+.info-text h2{
+
     font-size: 54px;
-    margin-bottom: 18px; 
+
+    margin-bottom: 18px;
 }
 
-.info-text p {
+.info-text p{
+
     color: #c8c8d8;
-    line-height: 1.8; 
+
+    line-height: 1.8;
+
     font-size: 18px;
 }
 
-.stats {
+/* STATS */
+.stats{
+
     margin-top: 25px;
-    display: grid; 
+
+    display: grid;
+
     gap: 14px;
 }
 
-.stats div {
+.stats div{
+
     padding: 15px;
-    border-radius: 14px; 
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid rgba(255, 255, 255, 0.06);
+
+    border-radius: 14px;
+
+    background:
+    rgba(255,255,255,0.04);
+
+    border:
+    1px solid rgba(255,255,255,0.06);
+
     color: #d7d7e4;
 }
 
 /* RESPONSIVO */
-@media (max-width: 900px) {
-    .hero {
+@media(max-width: 900px){
+
+    .hero{
+
         flex-direction: column;
-        text-align: center; 
+
+        text-align: center;
     }
 
-    .info {
+    .info{
+
         flex-direction: column;
-        text-align: center; 
+
+        text-align: center;
     }
 
-    .hero-text h1 {
+    .hero-text h1{
+
         font-size: 50px;
     }
 
-    .solar-system {
+    .solar-system{
+
         width: 320px;
         height: 320px;
     }
 
-    .planet-image {
+    .planet-image{
+
         width: 240px;
         height: 240px;
     }
-} 
+
+}
