@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planetas</title>
+    <title>Planetas - Sistema Solar</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/planeta.css">
 </head>
@@ -22,12 +22,19 @@
         </nav>
     </header>
 
-    <!-- HERO -->
+    <!-- HERO COM VÍDEO DE FUNDO -->
     <section class="hero">
+        
+        <!-- VÍDEO DE FUNDO -->
+        <video autoplay loop muted playsinline class="hero-video">
+            <source src="videos/sistemasolar.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos.
+        </video>
+        
+        <div class="hero-overlay"></div>
 
         <!-- TEXTO -->
         <div class="hero-text">
-
             <h1>
                 EXPLORE O
                 <span>SISTEMA SOLAR</span>
@@ -46,327 +53,98 @@
             <button>
                 <a href="mural.html">Iniciar exploração</a>
             </button>
-
-        </div>
-
-    <img
-        src="imagens/astronauta.png"
-        alt="Astronauta"
-        class="astronaut"
-    >
-
-    </div>
-
-    </section>
-
-    <!-- MENU -->
-    <section class="planets">
-
-        <div class="planet" data-planet="mercurio">
-            Mercúrio
-        </div>
-
-        <div class="planet" data-planet="venus">
-            Vênus
-        </div>
-
-        <div class="planet" data-planet="terra">
-            Terra
-        </div>
-
-        <div class="planet" data-planet="marte">
-            Marte
-        </div>
-
-        <div class="planet" data-planet="jupiter">
-            Júpiter
-        </div>
-
-        <div class="planet" data-planet="saturno">
-            Saturno
-        </div>
-
-        <div class="planet" data-planet="urano">
-            Urano
-        </div>
-
-        <div class="planet" data-planet="netuno">
-            Netuno
         </div>
 
     </section>
 
-    <!-- INFO -->
-    <section class="info">
+    <!-- CARDS DOS PLANETAS -->
+    <section class="planets-cards">
+        <h2 class="cards-title">ESCOLHA UM PLANETA</h2>
+        
+        <div class="cards-container">
+            
+            <a href="mercurio.html" class="planet-card">
+                <div class="card-image">
+                    <img src="imagens/mercuriooo.jpg" alt="Mercúrio">
+                </div>
+                <div class="card-info">
+                    <h3>Mercúrio</h3>
+                    <p>Clique para explorar</p>
+                </div>
+            </a>
 
-        <!-- GIF FUNDO -->
-        <div class="space-bg">
+            <a href="venus.html" class="planet-card">
+                <div class="card-image">
+                    <img src="imagens/venuus.jpg" alt="Vênus">
+                </div>
+                <div class="card-info">
+                    <h3>Vênus</h3>
+                    <p>Clique para explorar</p>
+                </div>
+            </a>
 
-            <img src="imagens/sistema_solar.gif" alt="">
+            <a href="terra.html" class="planet-card">
+                <div class="card-image">
+                    <img src="imagens/terraa.jpg" alt="Terra">
+                </div>
+                <div class="card-info">
+                    <h3>Terra</h3>
+                    <p>Clique para explorar</p>
+                </div>
+            </a>
+
+            <a href="marte.html" class="planet-card">
+                <div class="card-image">
+                    <img src="imagens/martee.jpg" alt="Marte">
+                </div>
+                <div class="card-info">
+                    <h3>Marte</h3>
+                    <p>Clique para explorar</p>
+                </div>
+            </a>
+
+            <a href="jupiter.html" class="planet-card">
+                <div class="card-image">
+                    <img src="imagens/jupiterr.jpg" alt="Júpiter">
+                </div>
+                <div class="card-info">
+                    <h3>Júpiter</h3>
+                    <p>Clique para explorar</p>
+                </div>
+            </a>
+
+            <a href="saturno.html" class="planet-card">
+                <div class="card-image">
+                    <img src="imagens/saturno.jpg" alt="Saturno">
+                </div>
+                <div class="card-info">
+                    <h3>Saturno</h3>
+                    <p>Clique para explorar</p>
+                </div>
+            </a>
+
+            <a href="urano.html" class="planet-card">
+                <div class="card-image">
+                    <img src="imagens/urano.jpg" alt="Urano">
+                </div>
+                <div class="card-info">
+                    <h3>Urano</h3>
+                    <p>Clique para explorar</p>
+                </div>
+            </a>
+
+            <a href="netuno.html" class="planet-card">
+                <div class="card-image">
+                    <img src="imagens/netuno.jpg" alt="Netuno">
+                </div>
+                <div class="card-info">
+                    <h3>Netuno</h3>
+                    <p>Clique para explorar</p>
+                </div>
+            </a>
 
         </div>
-
-        <!-- PLANETA -->
-        <div class="planet-image" id="planetImage"></div>
-
-        <!-- TEXTO -->
-        <div class="info-text">
-
-            <h2 id="planetTitle">
-                SELECIONE UM PLANETA
-            </h2>
-
-            <p id="planetDescription">
-                Clique em um planeta acima
-                para descobrir suas características.
-            </p>
-
-            <div class="stats">
-
-                <div id="type">
-                    Tipo:
-                </div>
-
-                <div id="diameter">
-                    Diâmetro:
-                </div>
-
-                <div id="distance">
-                    Distância do Sol:
-                </div>
-
-                <div id="day">
-                    Duração do dia:
-                </div>
-
-            </div>
-
-        </div>
-
     </section>
-
-    <!-- SCRIPT -->
-    <script>
-
-        const data = {
-
-            mercurio: {
-
-                title: "MERCÚRIO",
-
-                description:
-                "O menor planeta do Sistema Solar e o mais próximo do Sol.",
-
-                type: "Tipo: Rochoso",
-
-                diameter: "Diâmetro: 4.879 km",
-
-                distance: "Distância do Sol: 57,9 milhões km",
-
-                day: "Duração do dia: 58 dias",
-
-                image:
-                "imagens/mercurio.gif"
-            },
-
-            venus: {
-
-                title: "VÊNUS",
-
-                description:
-                "O planeta mais quente do Sistema Solar.",
-
-                type: "Tipo: Rochoso",
-
-                diameter: "Diâmetro: 12.104 km",
-
-                distance: "Distância do Sol: 108,2 milhões km",
-
-                day: "Duração do dia: 243 dias",
-
-                image:
-                "imagens/venus.gif"
-            },
-
-            terra: {
-
-                title: "TERRA",
-
-                description:
-                "Nosso lar e o único planeta conhecido por abrigar vida.",
-
-                type: "Tipo: Rochoso",
-
-                diameter: "Diâmetro: 12.742 km",
-
-                distance: "Distância do Sol: 149,6 milhões km",
-
-                day: "Duração do dia: 24h",
-
-                image:
-                "imagens/terra.gif"
-            },
-
-            marte: {
-
-                title: "MARTE",
-
-                description:
-                "Conhecido como o planeta vermelho.",
-
-                type: "Tipo: Rochoso",
-
-                diameter: "Diâmetro: 6.779 km",
-
-                distance: "Distância do Sol: 227,9 milhões km",
-
-                day: "Duração do dia: 24h 37min",
-
-                image:
-                "imagens/marte.gif"
-            },
-
-            jupiter: {
-
-                title: "JÚPITER",
-
-                description:
-                "O maior planeta do Sistema Solar.",
-
-                type: "Tipo: Gasoso",
-
-                diameter: "Diâmetro: 139.820 km",
-
-                distance: "Distância do Sol: 778,5 milhões km",
-
-                day: "Duração do dia: 10h",
-
-                image:
-                "imagens/jupiter.gif"
-            },
-
-            saturno: {
-
-                title: "SATURNO",
-
-                description:
-                "Conhecido pelos seus anéis incríveis.",
-
-                type: "Tipo: Gasoso",
-
-                diameter: "Diâmetro: 116.460 km",
-
-                distance: "Distância do Sol: 1,4 bilhões km",
-
-                day: "Duração do dia: 10h 42min",
-
-                image:
-                "imagens/saturno.gif"
-            },
-
-            urano: {
-
-                title: "URANO",
-
-                description:
-                "Um gigante gelado que gira inclinado.",
-
-                type: "Tipo: Gigante gelado",
-
-                diameter: "Diâmetro: 50.724 km",
-
-                distance: "Distância do Sol: 2,9 bilhões km",
-
-                day: "Duração do dia: 17h",
-
-                image:
-                "imagens/urano.gif"
-            },
-
-            netuno: {
-
-                title: "NETUNO",
-
-                description:
-                "O planeta mais distante do Sol.",
-
-                type: "Tipo: Gigante gelado",
-
-                diameter: "Diâmetro: 49.244 km",
-
-                distance: "Distância do Sol: 4,5 bilhões km",
-
-                day: "Duração do dia: 16h",
-
-                image:
-                "imagens/netuno.gif"
-            }
-
-        };
-
-        const planets =
-        document.querySelectorAll(".planet");
-
-        const title =
-        document.getElementById("planetTitle");
-
-        const description =
-        document.getElementById("planetDescription");
-
-        const type =
-        document.getElementById("type");
-
-        const diameter =
-        document.getElementById("diameter");
-
-        const distance =
-        document.getElementById("distance");
-
-        const day =
-        document.getElementById("day");
-
-        const image =
-        document.getElementById("planetImage");
-
-        planets.forEach(planet => {
-
-            planet.addEventListener("click", () => {
-
-                planets.forEach(el => {
-                    el.classList.remove("active");
-                });
-
-                planet.classList.add("active");
-
-                const selected =
-                data[planet.dataset.planet];
-
-                title.textContent =
-                selected.title;
-
-                description.textContent =
-                selected.description;
-
-                type.textContent =
-                selected.type;
-
-                diameter.textContent =
-                selected.diameter;
-
-                distance.textContent =
-                selected.distance;
-
-                day.textContent =
-                selected.day;
-
-                image.style.backgroundImage =
-                `url('${selected.image}')`;
-
-            });
-
-        });
-
-    </script>
 
     <footer>
         <div class="footer-container">
