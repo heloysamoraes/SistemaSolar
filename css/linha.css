@@ -151,6 +151,16 @@ h1{
     color:#d9e6ff;
 }
 
+.timeline .event img {
+    width: 100%;
+    max-width: 280px;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+    margin-bottom: 20px;
+    border-radius: 12px;
+}
+
 /* celular */
 
 @media(max-width:768px){
@@ -171,10 +181,5 @@ h1{
     h1{
         font-size:2.5rem;
     }
+}
 
-img {
-    width: 300px;
-    height: 200px;
-}
-    
-}
