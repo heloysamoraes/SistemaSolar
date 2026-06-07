@@ -11,7 +11,6 @@ body {
     overflow-x: hidden;
 }
 
-/* ESTRELAS ANIMADAS (igual ao resto do site) */
 body::before {
     content: "";
     position: fixed;
@@ -36,7 +35,6 @@ body::before {
     to { transform: translate(-200px,-300px); }
 }
 
-/* TÍTULO DA PÁGINA */
 .page-title {
     text-align: center;
     font-size: 48px;
@@ -48,7 +46,6 @@ body::before {
     z-index: 2;
 }
 
-/* TIMELINE */
 .timeline {
     position: relative;
     width: 90%;
@@ -59,7 +56,6 @@ body::before {
     z-index: 2;
 }
 
-/* LINHA CENTRAL */
 .timeline::before {
     content: "";
     position: absolute;
@@ -73,7 +69,6 @@ body::before {
     box-shadow: 0 0 20px #7c5cff;
 }
 
-/* CARDS */
 .event {
     position: relative;
     width: 45%;
@@ -93,7 +88,6 @@ body::before {
     background: rgba(124, 92, 255, 0.1);
 }
 
-/* ALTERNA ESQUERDA E DIREITA */
 .event:nth-child(odd) {
     margin-right: auto;
 }
@@ -102,7 +96,6 @@ body::before {
     margin-left: auto;
 }
 
-/* BOLINHAS */
 .event::after {
     content: "";
     position: absolute;
@@ -123,7 +116,6 @@ body::before {
     left: -60px;
 }
 
-/* IMAGENS */
 .event img {
     width: 100%;
     max-width: 280px;
@@ -140,7 +132,6 @@ body::before {
     transform: scale(1.02);
 }
 
-/* TEXTOS */
 .event h2 {
     margin-bottom: 12px;
     color: #7c5cff;
@@ -153,7 +144,6 @@ body::before {
     font-size: 16px;
 }
 
-/* BOTÃO VOLTAR AO TOPO */
 #btnTopo {
     display: none;
     position: fixed;
@@ -178,7 +168,6 @@ body::before {
     box-shadow: 0 0 30px rgba(76, 201, 240, 0.8);
 }
 
-/* RESPONSIVIDADE */
 @media (max-width: 768px) {
     .timeline::before {
         left: 30px;
@@ -235,7 +224,7 @@ body::before {
         height: 140px;
     }
 }
-/* AJUSTE PARA O CABEÇALHO NÃO SOBREPOR O TÍTULO */
 body {
-    padding-top: 80px; /* ESPAÇO PARA O HEADER FIXO */
+    padding-top: 80px;
 }
+
