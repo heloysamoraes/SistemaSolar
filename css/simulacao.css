@@ -9,7 +9,7 @@
 
 body{
     width:100%;
-    height:100vh;
+    min-height:100vh;
     overflow:hidden;
     background: radial-gradient(circle at center, #020817 0%, #01040d 45%, #000000 100%);
     position:relative;
@@ -49,7 +49,7 @@ body{
 }
 
 .titulo p{
-    color:rgba(255,255,255,0.35);
+    color:rgba(179, 176, 176, 0.497);
     margin-top:6px;
     letter-spacing:4px;
     font-size:10px;
@@ -331,4 +331,65 @@ input[type="radio"]{
 #urano-info:checked ~ .urano-painel,
 #netuno-info:checked ~ .netuno-painel{
     display:block !important;
+}
+
+@media (max-width: 768px){
+
+    body{
+        overflow-y: auto;
+    }
+    .titulo{
+        width: 100%;
+        left: 0;
+        top: 20px;
+        text-align: center;
+        padding: 0 15px;
+    }
+    .titulo h1{
+        font-size: 18px;
+        letter-spacing: 5px;
+    }
+    .titulo p{
+        font-size: 9px;
+        letter-spacing: 2px;
+    }
+    .sistema-solar{
+        transform: scale(.4);
+    }
+    .painel{
+        width: 95%;
+        padding: 25px;
+        max-height: 85vh;
+        overflow-y: auto;
+    }
+    .painel h1{
+        font-size: 28px;
+    }
+    .cards{
+        grid-template-columns: 1fr;
+    }
+    button{
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+@media (max-width: 480px){
+
+    .sistema-solar{
+        transform: scale(.28);
+    }
+    .titulo h1{
+        font-size: 15px;
+    }
+    .painel{
+        padding: 20px;
+    }
+    .painel h1{
+        font-size: 24px;
+    }
+    .fechar{
+        width: 100%;
+        text-align: center;
+    }
 }

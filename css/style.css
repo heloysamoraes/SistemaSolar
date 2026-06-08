@@ -618,7 +618,7 @@ footer::after {
     .footer-brand p {
         max-width: 100%;
     }
-}
+} 
 
 @media (max-width: 600px) {
 
