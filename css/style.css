@@ -456,6 +456,32 @@ footer::after {
     color: #8b9bc8;
 }
 
+.footer-fontes {
+    max-width: 1300px;
+    margin: 40px auto 0;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255,255,255,.1);
+    text-align: center;
+}
+
+.footer-fontes a {
+    display: inline-block;
+    margin: 8px 15px;
+    color: #9d84ff;
+    text-decoration: none;
+    transition: .3s;
+}
+
+.footer-fontes a:hover {
+    color: #4aa3ff;
+    text-decoration: underline;
+}
+
+.footer-fontes a:hover {
+    color: #4aa3ff;
+    text-decoration: underline;
+}
+
 @keyframes girar {
     from {
         transform: rotate(0deg);
