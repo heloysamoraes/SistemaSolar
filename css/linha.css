@@ -9,6 +9,7 @@ body {
     background: radial-gradient(circle at center, #0f1b38 0%, #050816 70%);
     color: white;
     overflow-x: hidden;
+    padding-top: 80px;
 }
 
 body::before {
@@ -204,6 +205,11 @@ body::before {
         bottom: 20px;
         right: 20px;
     }
+
+    .footer-container {
+        grid-template-columns: 1fr !important;
+        gap: 40px !important;
+    }
 }
 
 @media (max-width: 480px) {
@@ -224,14 +230,4 @@ body::before {
         height: 140px;
     }
 }
-body {
-    padding-top: 80px;
-} 
-
-@media (max-width: 768px) {
-    .footer-container {
-        grid-template-columns: 1fr !important;
-        gap: 40px !important;
-    }
-}
-
+ 

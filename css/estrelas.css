@@ -376,21 +376,82 @@
     line-height: 1.7;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 900px){
+
+    .formacao,
+    .sol-section{
+        flex-direction: column;
+        text-align: center;
+        gap: 50px;
+    }
+    .hero h1,
+    .composicao h2,
+    .vida h2,
+    .overlay h2,
+    .sol-texto h2{
+        font-size: 40px;
+    }
+    .etapa{
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    .imagem{
+        width: 100%;
+        max-width: 450px;
+    }
+    .imagem img{
+        height: auto;
+    }
+    .sol-animado{
+        width: 100%;
+        height: auto;
+    }
+    .sol{
+        width: 250px;
+        height: 250px;
+    }
+    .vida-grid{
+        grid-template-columns: 1fr;
+    }
+    .overlay{
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+    }
+}
+
+@media (max-width: 600px){
 
     .hero h1,
     .composicao h2,
-    .vida h2 {
-        font-size: 42px;
-    } 
-    .overlay h2, 
-    .sol-texto h2 {
-        font-size: 40px;
-    } 
-    .imagem {
-        width: 100%;
-    } 
-    .vida-grid {
-        grid-template-columns: 1fr;
+    .vida h2,
+    .overlay h2,
+    .sol-texto h2{
+        font-size: 30px;
     }
-} 
+    .hero p,
+    .subtitulo,
+    .etapa p{
+        font-size: 16px;
+    }
+    .etapa h3{
+        font-size: 35px;
+    }
+    .card-info,
+    .vida-card{
+        width: 100%;
+        padding: 25px;
+    }
+    .supernova img{
+        height: 300px;
+    }
+    .dados{
+        justify-content: center;
+        text-align: center;
+    }
+    .sol{
+        width: 180px;
+        height: 180px;
+    }
+}

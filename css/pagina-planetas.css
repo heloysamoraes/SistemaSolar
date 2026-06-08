@@ -10,8 +10,7 @@ body {
     color: white;
     overflow-x: hidden;
 }
-
-/* ESTRELAS ANIMADAS */
+ 
 body::before {
     content: "";
     position: fixed;
@@ -34,8 +33,7 @@ body::before {
     from { transform: translate(0,0); }
     to { transform: translate(-200px,-300px); }
 }
-
-/* Banner */
+ 
 .banner {
     position: relative;
     height: 70vh;
@@ -65,7 +63,7 @@ body::before {
 }
 
 .banner-content h1 {
-    font-size: 6rem;
+    font-size: clamp(2.2rem, 8vw, 6rem);
     letter-spacing: 6px;
     background: linear-gradient(135deg, #7c5cff, #ffffff);
     -webkit-background-clip: text;
@@ -78,8 +76,7 @@ body::before {
     margin-top: 10px;
     color: #c5c5d4;
 }
-
-/* Seções */
+ 
 .informacoes,
 .curiosidades {
     padding: 80px 10%;
@@ -95,8 +92,7 @@ body::before {
     -webkit-text-fill-color: transparent;
 }
 
-/* Cards */
-.cards {
+.cards { 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -148,8 +144,7 @@ body::before {
     color: #c5c5d4;
     font-size: 1rem;
 }
-
-/* Curiosidades Box */
+ 
 .curiosidade-box {
     max-width: 900px;
     margin: auto;
@@ -177,9 +172,7 @@ body::before {
     color: white;
     transform: translateX(10px);
     transition: 0.3s;
-}
-
-/* Botão Voltar */
+} 
 .voltar {
     display: block;
     width: fit-content;
@@ -199,37 +192,7 @@ body::before {
     transform: translateX(-5px);
     box-shadow: 0 5px 20px rgba(124, 92, 255, 0.3);
 }
-
-/* Responsividade */
-@media (max-width: 768px) {
-    .banner-content h1 {
-        font-size: 3rem;
-    }
-    
-    .banner-content p {
-        font-size: 1rem;
-    }
-    
-    .informacoes h2,
-    .curiosidades h2 {
-        font-size: 1.8rem;
-    }
-    
-    .informacoes,
-    .curiosidades {
-        padding: 50px 5%;
-    }
-    
-    .card {
-        width: 100%;
-        max-width: 280px;
-    }
-    
-    .curiosidade-box p {
-        font-size: 0.9rem;
-    }
-}
-/* Banner com GIF */
+ 
 .banner {
     position: relative;
     height: 70vh;
@@ -269,4 +232,107 @@ body::before {
     transform: translate(-50%, -50%);
     text-align: center;
     z-index: 2;
+}
+
+@media (max-width: 1024px){
+
+    .banner-content h1{
+        font-size: 4rem;
+    } 
+    .informacoes,
+    .curiosidades{
+        padding: 70px 6%;
+    } 
+    .card{
+        width: 220px;
+    }
+}
+
+@media (max-width: 768px){
+
+    .banner{
+        height: 60vh;
+        min-height: 400px;
+    } 
+    .banner-content{
+        width: 90%;
+    } 
+    .banner-content h1{
+        font-size: 3rem;
+        letter-spacing: 3px;
+    } 
+    .banner-content p{
+        font-size: 1.1rem;
+    } 
+    .informacoes h2,
+    .curiosidades h2{
+        font-size: 2rem;
+        margin-bottom: 35px;
+    } 
+    .cards{
+        gap: 20px;
+    } 
+    .card{
+        width: 100%;
+        max-width: 350px;
+    } 
+    .curiosidade-box{
+        padding: 25px;
+    } 
+    .curiosidade-box p{
+        font-size: 1rem;
+        line-height: 1.8;
+    } 
+    .footer-container{
+        grid-template-columns: 1fr !important;
+        text-align: center;
+        gap: 35px !important;
+    }
+}
+
+@media (max-width: 480px){
+
+    .banner{
+        height: 50vh;
+        min-height: 320px;
+    } 
+    .banner-content h1{
+        font-size: 2.2rem;
+        letter-spacing: 2px;
+    } 
+    .banner-content p{
+        font-size: .95rem;
+    } 
+    .informacoes,
+    .curiosidades{
+        padding: 50px 5%;
+    } 
+    .informacoes h2,
+    .curiosidades h2{
+        font-size: 1.7rem;
+    } 
+    .card{
+        padding: 20px;
+    } 
+    .card h3{
+        font-size: 1.1rem;
+    } 
+    .card p{
+        font-size: .95rem;
+    } 
+    .curiosidade-box{
+        padding: 20px;
+    } 
+    .curiosidade-box p{
+        font-size: .95rem;
+        line-height: 1.7;
+    } 
+    .voltar{
+        width: 90%;
+        text-align: center;
+        padding: 12px;
+    } 
+    .footer-fontes{
+        text-align: center;
+    }
 }
